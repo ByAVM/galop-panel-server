@@ -12,6 +12,7 @@ const app = express()
 app.use(history())
 app.use(bodyParserJson())
 app.use(cors())
+app.use(express.static(__dirname + '/static'))
 app.use(require('./src/routes'))
 
 const { DB_USER, DB_HOST, DB_NAME, DB_PASSWORD, PORT } = process.env
